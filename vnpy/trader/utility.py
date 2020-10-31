@@ -412,6 +412,15 @@ class ArrayManager(object):
             return result
         return result[-1]
 
+    def ma(self, n: int, array: bool = False) -> Union[float, np.ndarray]:
+        """
+        Simple moving average.
+        """
+        result = talib.MA(self.close, n)
+        if array:
+            return result
+        return result[-1]
+
     def ema(self, n: int, array: bool = False) -> Union[float, np.ndarray]:
         """
         Exponential moving average.
